@@ -102,3 +102,12 @@ body {
         margin-left:1rem;
     }
 }
+
+
+@media (max-width:844px) {
+	.container {
+		.sidebar {
+			width:40%;
+		}
+	}
+}
