@@ -107,7 +107,13 @@ body {
 @media (max-width:844px) {
 	.container {
 		.sidebar {
-			width:40%;
+			width:50%;
+		}
+		.sidebarbutton {
+			margin-left:calc(50% + 2rem);
+		}
+		.main {
+			margin-left:calc(50% + 3rem);
 		}
 	}
 }
