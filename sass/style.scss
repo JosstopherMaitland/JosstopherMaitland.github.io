@@ -4,7 +4,7 @@ $main-text-color:#2E2C2F;
 $white: #fff;
 
 body {
-    color:$main-text-color;
+    color:black;
     padding:0;
     margin:0;
     position:relative;
@@ -33,14 +33,23 @@ body {
         }
         .sidebartop{
             padding-top:1rem;
-            height:55px;
+			padding-bottom:1rem;
 			a {
+				padding-top:0;
+				padding-bottom:0;
 				cursor:pointer;
+				display:table;
+				.header {
+					font-size:40px;
+					padding:1rem 1rem 1rem 0rem;
+					display:table-cell;
+					vertical-align:middle;
+				}
 			}
 		}
         nav {
             ul {
-                padding:2rem 0rem;
+                padding:1rem 0rem;
                 margin:0;
                 list-style:none;
                 li {
@@ -55,7 +64,7 @@ body {
 						background-color:lighten($primary-color,5%);
                         .text {
                             position:relative;
-                            left:1rem;
+							padding:1rem 2rem 1rem 1rem;
                             display:table-cell;
 							vertical-align:middle;
                         }
