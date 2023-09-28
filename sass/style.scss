@@ -2,7 +2,10 @@ $primary-color:#00916E;
 $darker-color:#00664E;
 $main-text-color:#2E2C2F;
 $white: #fff;
+$sidebar-prop:20%;
+$main-width:800px;
 
+/*not for long...*/
 body {
     color:black;
     padding:0;
@@ -20,7 +23,7 @@ body {
     .sidebar {
         background-color:$primary-color;
         color:$white;
-        width:30%;
+        width:$sidebar-prop;
         height:100%;
         padding:0 1rem;
         position:fixed;
@@ -79,7 +82,7 @@ body {
 		height:100%;
 		position:fixed;
 		background-color:darken($primary-color, 10%);
-		margin-left:calc(30% + 2rem);
+		margin-left:calc($sidebar-prop + 2rem);
 		cursor:pointer;
 		display:table;
 		text-align:center;
@@ -93,10 +96,13 @@ body {
 	}
 	
     .main {
-        margin-left:calc(30% + 3rem);
-        padding:1rem;
-		text-align:justify;
+		width:$main-width;
+		margin-left:max($sidebar-prop + 3rem, 50% - $main-width/2);
+		margin-right:max(0px, 50% - $main-width/2);
 		height:100%;
+		text-align:justify;
+		padding-left:10px;
+		padding-right:10px;
     }
 }
 
@@ -107,30 +113,34 @@ body {
 	.sidebarbutton {
 		margin-left:0;
 	}
-    .main {
-        margin-left:1rem;
-    }
+	.main {
+		margin-left:max(1rem, 50% - $main-width/2);
+		margin-right:max(0px, 50% - $main-width/2);
+	}
 }
 
+
+$sidebar-prop-mobile: 45%;
 
 @media (max-width:844px) {
 	.container {
 		.sidebar {
-			width:50%;
+			width:$sidebar-prop-mobile;
 		}
 		.sidebarbutton {
-			margin-left:calc(50% + 2rem);
+			margin-left:calc($sidebar-prop-mobile + 2rem);
 		}
 		.main {
-			margin-left:calc(50% + 3rem);
+			margin-left:max($sidebar-prop-mobile + 3rem, 50% - $main-width/2);
 		}
 	}
 	.short {
-	.sidebarbutton {
-		margin-left:0;
+		.sidebarbutton {
+			margin-left:0;
+		}
+		.main {
+			margin-left:max(1rem, 50% - $main-width/2);
+			margin-right:max(0px, 50% - $main-width/2);
+		}
 	}
-    .main {
-        margin-left:1rem;
-    }
-}
 }
